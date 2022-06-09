@@ -1,4 +1,5 @@
 using Kolokwium2.Models;
+using Kolokwium2.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -28,6 +29,9 @@ namespace Kolokwium2
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
+
+            services.AddScoped<IMusicService, MusicService>();
             services.AddDbContext<MusicDbContext>(options =>
             {
                 options.UseSqlServer("Data Source=db-mssql;Initial Catalog=s20781;Integrated Security=True");

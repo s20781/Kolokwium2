@@ -14,6 +14,8 @@ namespace Kolokwium2.Models
         }
 
 
+        public DbSet<Album> Albums { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Musician>(e =>
